@@ -1,0 +1,96 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=Unknow
+ClassGuid={4d36e97e-e325-11c3-bfc1-08002be10318}
+Provider=%PROVIDER_NAME%
+DriverVer=03/31/2017,1.00.0000
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=FlirOneGen2_Frame_ClassReg     
+
+[FlirOneGen2_Frame_ClassReg]
+HKR,,,0,%CLASSNAME%
+HKR,,Icon,,-5
+
+
+; ================= Device section =====================
+
+[Manufacturer]
+%MANUFACTURER_NAME%=Da-nie,NTx86
+
+; For Win2K
+[Da-nie]
+%DEVICE_NAME%=flironegen2_frame.Dev, USB\VID_09CB&PID_1996&MI_02
+
+; For XP and later
+[Da-nie.NTx86]
+%DEVICE_NAME%=flironegen2_frame.Dev, USB\VID_09CB&PID_1996&MI_02
+
+[flironegen2_frame.Dev.NT]
+CopyFiles=flironegen2_frame.Files.Ext
+
+[Switch.Dev.NT]
+;dummy section
+
+[Switch.Dev.NT.Services]
+AddService = , %SPSVCINST_ASSOCSERVICE%, 
+
+[flironegen2_frame.Dev.NT.Services]
+AddService = flironegen2_frame, %SPSVCINST_ASSOCSERVICE%, flironegen2_frame.AddService
+
+[flironegen2_frame.AddService]
+DisplayName    = %DEVICE_DYSPLAY_NAME%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\flironegen2_frame.sys
+AddReg         = flironegen2_frame.AddReg
+LoadOrderGroup = Base
+
+[flironegen2_frame.Files.Ext]
+flironegen2_frame.sys
+
+[SourceDisksNames]
+1=%DISK_DESCRIPTION%,,,
+
+[SourceDisksFiles]
+flironegen2_frame.sys = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+;-------------- WDF Coinstaller installation
+
+[DestinationDirs]
+CoInstaller_CopyFiles = 11
+
+[flironegen2_frame.Dev.NT.CoInstallers]
+AddReg=CoInstaller_AddReg
+CopyFiles=CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller01009.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01009.dll=1
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+[flironegen2_frame.Dev.NT.Wdf]
+KmdfService = flironegen2_frame, flironegen2_frame_wdfsect
+[flironegen2_frame_wdfsect]
+KmdfLibraryVersion = 1.9
+
+;---------------------------------------------------------------;
+
+[Strings]
+PROVIDER_NAME="Da-nie"
+MANUFACTURER_NAME="Da-nie Research"
+DISK_DESCRIPTION="Da-nie drivers folder"
+DEVICE_NAME="FlirOne Gen 2 Frame"
+DEVICE_DYSPLAY_NAME="FlirOne Gen 2 Frame"
+CLASSNAME="FlirOne Gen 2 Frame"
+SPSVCINST_ASSOCSERVICE= 0x00000002

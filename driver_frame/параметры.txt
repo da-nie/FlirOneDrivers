@@ -1,0 +1,247 @@
+iInterface              5 iAP Interface
+bEndpointAddress     0x81  EP 1 IN
+bEndpointAddress     0x02  EP 2 OUT
+
+iInterface              6 com.flir.rosebud.fileio
+bEndpointAddress     0x83  EP 3 IN
+bEndpointAddress     0x04  EP 4 OUT
+
+iInterface              7 com.flir.rosebud.frame
+bEndpointAddress     0x85  EP 5 IN
+bEndpointAddress     0x06  EP 6 OUT
+
+
+DLL version:	1.2.6.0
+Driver version:	1.2.6.0
+
+bus/device  idVendor/idProduct
+bus-0/\\.\libusb0-0001--0x09cb-0x1996     09CB/1996
+- Manufacturer : FLIR Systems
+- Product      : FLIR ONE Camera
+- Serial Number: FLIRONEF03G8J00586G
+bLength:             18
+bDescriptorType:     01h
+bcdUSB:              0200h
+bDeviceClass:        00h
+bDeviceSubClass:     00h
+bDeviceProtocol:     00h
+bMaxPacketSize0:     40h
+idVendor:            09CBh
+idProduct:           1996h
+bcdDevice:           0108h
+iManufacturer:       1
+iProduct:            2
+iSerialNumber:       3
+bNumConfigurations:  1
+  wTotalLength:         96
+  bNumInterfaces:       3
+  bConfigurationValue:  3
+  iConfiguration:       4
+  bmAttributes:         c0h
+  MaxPower:             0
+    bInterfaceNumber:   0
+    bAlternateSetting:  0
+    bNumEndpoints:      2
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 0
+    iInterface:         5
+      bEndpointAddress: 81h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        0
+      bRefresh:         0
+      bSynchAddress:    0
+      bEndpointAddress: 02h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        1
+      bRefresh:         0
+      bSynchAddress:    0
+    bInterfaceNumber:   1
+    bAlternateSetting:  1
+    bNumEndpoints:      0
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 1
+    iInterface:         6
+    bInterfaceNumber:   1
+    bAlternateSetting:  0
+    bNumEndpoints:      2
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 1
+    iInterface:         6
+      bEndpointAddress: 83h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        0
+      bRefresh:         0
+      bSynchAddress:    0
+      bEndpointAddress: 04h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        1
+      bRefresh:         0
+      bSynchAddress:    0
+    bInterfaceNumber:   2
+    bAlternateSetting:  1
+    bNumEndpoints:      0
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 1
+    iInterface:         7
+    bInterfaceNumber:   2
+    bAlternateSetting:  0
+    bNumEndpoints:      2
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 1
+    iInterface:         7
+      bEndpointAddress: 85h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        0
+      bRefresh:         0
+      bSynchAddress:    0
+      bEndpointAddress: 06h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        1
+      bRefresh:         0
+      bSynchAddress:    0
+
+bus-0/\\.\libusb0-0002--0x09cb-0x1996     09CB/1996
+- Manufacturer : FLIR Systems
+- Product      : iAP Interface
+- Serial Number: FLIRONEF03G8J00586G
+bLength:             18
+bDescriptorType:     01h
+bcdUSB:              0200h
+bDeviceClass:        00h
+bDeviceSubClass:     00h
+bDeviceProtocol:     00h
+bMaxPacketSize0:     40h
+idVendor:            09CBh
+idProduct:           1996h
+bcdDevice:           0108h
+iManufacturer:       1
+iProduct:            5
+iSerialNumber:       3
+bNumConfigurations:  1
+  wTotalLength:         32
+  bNumInterfaces:       1
+  bConfigurationValue:  3
+  iConfiguration:       4
+  bmAttributes:         c0h
+  MaxPower:             0
+    bInterfaceNumber:   0
+    bAlternateSetting:  0
+    bNumEndpoints:      2
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 0
+    iInterface:         5
+      bEndpointAddress: 81h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        0
+      bRefresh:         0
+      bSynchAddress:    0
+      bEndpointAddress: 02h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        1
+      bRefresh:         0
+      bSynchAddress:    0
+
+
+bus-0/\\.\libusb0-0003--0x09cb-0x1996     09CB/1996
+- Manufacturer : FLIR Systems
+- Product      : com.flir.rosebud.fileio
+- Serial Number: FLIRONEF03G8J00586G
+bLength:             18
+bDescriptorType:     01h
+bcdUSB:              0200h
+bDeviceClass:        00h
+bDeviceSubClass:     00h
+bDeviceProtocol:     00h
+bMaxPacketSize0:     40h
+idVendor:            09CBh
+idProduct:           1996h
+bcdDevice:           0108h
+iManufacturer:       1
+iProduct:            6
+iSerialNumber:       3
+bNumConfigurations:  1
+  wTotalLength:         32
+  bNumInterfaces:       1
+  bConfigurationValue:  3
+  iConfiguration:       4
+  bmAttributes:         c0h
+  MaxPower:             0
+    bInterfaceNumber:   1
+    bAlternateSetting:  0
+    bNumEndpoints:      2
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 1
+    iInterface:         6
+      bEndpointAddress: 83h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        0
+      bRefresh:         0
+      bSynchAddress:    0
+      bEndpointAddress: 04h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        1
+      bRefresh:         0
+      bSynchAddress:    0
+
+
+bus-0/\\.\libusb0-0004--0x09cb-0x1996     09CB/1996
+- Manufacturer : FLIR Systems
+- Product      : com.flir.rosebud.frame
+- Serial Number: FLIRONEF03G8J00586G
+bLength:             18
+bDescriptorType:     01h
+bcdUSB:              0200h
+bDeviceClass:        00h
+bDeviceSubClass:     00h
+bDeviceProtocol:     00h
+bMaxPacketSize0:     40h
+idVendor:            09CBh
+idProduct:           1996h
+bcdDevice:           0108h
+iManufacturer:       1
+iProduct:            7
+iSerialNumber:       3
+bNumConfigurations:  1
+  wTotalLength:         32
+  bNumInterfaces:       1
+  bConfigurationValue:  3
+  iConfiguration:       4
+  bmAttributes:         c0h
+  MaxPower:             0
+    bInterfaceNumber:   2
+    bAlternateSetting:  0
+    bNumEndpoints:      2
+    bInterfaceClass:    255
+    bInterfaceSubClass: 240
+    bInterfaceProtocol: 1
+    iInterface:         7
+      bEndpointAddress: 85h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        0
+      bRefresh:         0
+      bSynchAddress:    0
+      bEndpointAddress: 06h
+      bmAttributes:     02h
+      wMaxPacketSize:   512
+      bInterval:        1
+      bRefresh:         0
+      bSynchAddress:    0
+

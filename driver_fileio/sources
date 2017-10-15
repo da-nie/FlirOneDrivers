@@ -1,0 +1,11 @@
+TARGETNAME=flironegen2_fileio
+TARGETTYPE=DRIVER
+
+
+
+INCLUDES = ..\inc\
+
+KMDF_VERSION_MAJOR=1
+
+SOURCES=main.c 
+

@@ -1,0 +1,96 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=Unknow
+ClassGuid={4d36e97e-e325-11c3-bfc1-08002be10318}
+Provider=%PROVIDER_NAME%
+DriverVer=03/31/2017,1.00.0000
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=FlirOneGen2_FileIO_ClassReg     
+
+[FlirOneGen2_FileIO_ClassReg]
+HKR,,,0,%CLASSNAME%
+HKR,,Icon,,-5
+
+
+; ================= Device section =====================
+
+[Manufacturer]
+%MANUFACTURER_NAME%=Da-nie,NTx86
+
+; For Win2K
+[Da-nie]
+%DEVICE_NAME%=flironegen2_fileio.Dev, USB\VID_09CB&PID_1996&MI_01
+
+; For XP and later
+[Da-nie.NTx86]
+%DEVICE_NAME%=flironegen2_fileio.Dev, USB\VID_09CB&PID_1996&MI_01
+
+[flironegen2_fileio.Dev.NT]
+CopyFiles=flironegen2_fileio.Files.Ext
+
+[Switch.Dev.NT]
+;dummy section
+
+[Switch.Dev.NT.Services]
+AddService = , %SPSVCINST_ASSOCSERVICE%, 
+
+[flironegen2_fileio.Dev.NT.Services]
+AddService = flironegen2_fileio, %SPSVCINST_ASSOCSERVICE%, flironegen2_fileio.AddService
+
+[flironegen2_fileio.AddService]
+DisplayName    = %DEVICE_DYSPLAY_NAME%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\flironegen2_fileio.sys
+AddReg         = flironegen2_fileio.AddReg
+LoadOrderGroup = Base
+
+[flironegen2_fileio.Files.Ext]
+flironegen2_fileio.sys
+
+[SourceDisksNames]
+1=%DISK_DESCRIPTION%,,,
+
+[SourceDisksFiles]
+flironegen2_fileio.sys = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+;-------------- WDF Coinstaller installation
+
+[DestinationDirs]
+CoInstaller_CopyFiles = 11
+
+[flironegen2_fileio.Dev.NT.CoInstallers]
+AddReg=CoInstaller_AddReg
+CopyFiles=CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller01009.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01009.dll=1
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+[flironegen2_fileio.Dev.NT.Wdf]
+KmdfService = flironegen2_fileio, flironegen2_fileio_wdfsect
+[flironegen2_fileio_wdfsect]
+KmdfLibraryVersion = 1.9
+
+;---------------------------------------------------------------;
+
+[Strings]
+PROVIDER_NAME="Da-nie"
+MANUFACTURER_NAME="Da-nie Research"
+DISK_DESCRIPTION="Da-nie drivers folder"
+DEVICE_NAME="FlirOne Gen 2 FileIO"
+DEVICE_DYSPLAY_NAME="FlirOne Gen 2 FileIO"
+CLASSNAME="FlirOne Gen 2 FileIO"
+SPSVCINST_ASSOCSERVICE= 0x00000002
